@@ -11,15 +11,15 @@ from PIL import Image
 
 st.title('House Price and Loan Eligibility Predictor')
 
-image = Image.open("C:\\Users\\Simeon\\Downloads\\pexels-carlos-machado-1013427.jpg")
-image2 = Image.open("C:\\Users\\Simeon\Downloads\\pexels-kindel-media-7579201.jpg")
+image = Image.open("pexels-carlos-machado-1013427.jpg")
+image2 = Image.open("pexels-kindel-media-7579201.jpg")
 st.image(image, width= 500)
 
 # Load the house price prediction model
-house_price_model = pickle.load(open("C:\\Users\\Simeon\\Desktop\\house_model.sav", 'rb'))
+house_price_model = pickle.load(open("house_model.sav", 'rb'))
 
 # Load the loan eligibility model
-loan_model = pickle.load(open("C:\\Users\\Simeon\\Desktop\\loan_model.sav", 'rb'))
+loan_model = pickle.load(open("loan_model.sav", 'rb'))
 
 
 def main():
