@@ -27,9 +27,9 @@ def main():
     # Add user input fields for house features
     st.header('House Price Prediction')
     OverallQual = st.sidebar.slider('Overall quality', 1, 10, 1)
-    YearBuilt = st.number_input('Input the year built e.g "2008" ',min_value=0,max_value=2023,step=1)
+    YearBuilt = st.number_input('Input the year built e.g "2008" ',min_value=0,step=1)
     st.write('Year of Built  is ', YearBuilt)
-    YearRemodAdd = st.number_input('input the Remodel date- Same as year of construction if no remodeled date e.g "2008"',min_value=0,max_value=2023,step=1)
+    YearRemodAdd = st.number_input('input the Remodel date- Same as year of construction if no remodeled date e.g "2008"',min_value=0,step=1)
     st.write('Year of RemoAdd ', YearRemodAdd)
     TotalBsmtSF = st.number_input('input the Total Basement',min_value=0,step=1)
     st.write('total Basement  is ', TotalBsmtSF)
