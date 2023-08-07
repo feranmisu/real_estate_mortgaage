@@ -39,11 +39,21 @@ def main():
     st.write('Ground living area  is ', GrLivArea)
     FullBath = st.sidebar.slider('Full bathrooms above grade', 0, 3, 1)
     TotRmsAbvGrd = st.sidebar.slider('Total rooms above grade (does not include bathrooms)', 1, 30, 1)
-    GarageCars = st.sidebar.slider('Garage cars', 0, 20, 1)
+    GarageCars = st.sidebar.slider('Garage cars-(Size of garage in car capacity)', 0, 30, 1)
     GarageArea = st.number_input('input the Size of garage in square feet e.g 40.05')
     st.write('garage area  is ', GarageArea)
-    MSZoning = st.number_input('input the general zoning (Identifies the general zoning classification of the sale).',min_value=0,step=1)
-    st.write('Mszoning is ', MSZoning)
+    ms = st.selectbox('Identifies the general zoning classification of the sale).'['RL', 'RM', 'C (all)', 'FV', 'RH'])
+    if (ms == 'FV'):
+        MSZoning = 1
+    elif (ms == 'RH'):
+        MSZoning = 2
+    elif (ms == 'RL'):
+        MSZoning = 3
+    elif (ms == 'RM'):
+        MSZoning = 4
+    else:
+        MSZoning = 0
+    st.write('Mszoning is ', ms)
     Utilities = st.number_input('input the Utilities',min_value=0,step=1)
     st.write('Utilities  is ', Utilities)
     BldgType = st.number_input('input the Building type',min_value=0,step=1)
