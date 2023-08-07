@@ -59,9 +59,19 @@ def main():
         Utilities = 0
     else:
         Utilities = 1
-    st.write('Utilities selected is ', uti)
-    BldgType = st.number_input('input the Building type',min_value=0,step=1)
-    st.write('Building Type  is ', BldgType)
+    st.success(f'Utilities selected is {uti}')
+    build = st.selectbox('Select Type of dwelling',['Single-family Detached' , 'Two-family Conversion; originally built as one-family dwelling','Duplex','Townhouse End Unit','Townhouse Inside Unit']) 
+    if (build == 'Single-family Detached'):
+        BldgType = 0
+    elif (build == 'Duplex'):
+        BldgType = 2
+    elif (build == 'Townhouse End Unit'):
+        BldgType = 4
+    elif (build == 'Townhouse Inside Unit'):
+        BldgType = 3
+    else:
+        BldgType = 1
+    st.success(f'Type of dwelling is {build}')
     KitchenQual = st.sidebar.slider('Kitchen Quality', 1, 6, 1)
     SaleCondition =  st.sidebar.slider('Sale Condition', 1, 6, 1)
 
