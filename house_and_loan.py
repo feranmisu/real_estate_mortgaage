@@ -35,7 +35,7 @@ def main():
     st.write('Total square feet of basement area', TotalBsmtSF)
     firstFlrSF = st.number_input('input the first floor in square feet e,g 25.27')
     st.write('first floor square feet is ', firstFlrSF)
-    GrLivArea = st.number_input('input the Ground Living area')
+    GrLivArea = st.number_input('input the Ground Living area e,g 25.27')
     st.write('Ground living area  is ', GrLivArea)
     FullBath = st.sidebar.slider('Full bathrooms above grade', 0, 3, 1)
     TotRmsAbvGrd = st.sidebar.slider('Total rooms above grade (does not include bathrooms)', 1, 30, 1)
