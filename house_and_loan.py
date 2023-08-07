@@ -42,7 +42,7 @@ def main():
     GarageCars = st.sidebar.slider('Garage cars-(Size of garage in car capacity)', 0, 30, 1)
     GarageArea = st.number_input('input the Size of garage in square feet e.g 40.05')
     st.write('garage area  is ', GarageArea)
-    ms = st.selectbox('Identifies the general zoning classification of the sale).'['RL', 'RM', 'C (all)', 'FV', 'RH'])
+    ms = st.selectbox('Identifies the general zoning classification of the sale).',['RL', 'RM', 'C (all)', 'FV', 'RH'])
     if (ms == 'FV'):
         MSZoning = 1
     elif (ms == 'RH'):
