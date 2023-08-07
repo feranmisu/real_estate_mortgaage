@@ -54,7 +54,7 @@ def main():
     else:
         MSZoning = 0
     st.success(f'user selected {ms}')
-    uti = st.selectbox('Type of utilities available',[All public Utilities , NoSewr	Electricity- Gas-Water-(Septic Tank)]) 
+    uti = st.selectbox('Type of utilities available',['All public Utilities' , 'NoSewr	Electricity, Gas, and Water (Septic Tank)']) 
     if (uti == 'All public Utilities'):
         Utilities = 0
     else:
