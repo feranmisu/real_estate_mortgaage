@@ -53,7 +53,7 @@ def main():
         MSZoning = 4
     else:
         MSZoning = 0
-    st.write('Mszoning is ', ms)
+    st.write('RL = Residential Low Density RM = Residential Medium Density RH = Residential High Density FV = FLoating Village Residential c = Commercial user selected ', ms)
     Utilities = st.number_input('input the Utilities',min_value=0,step=1)
     st.write('Utilities  is ', Utilities)
     BldgType = st.number_input('input the Building type',min_value=0,step=1)
