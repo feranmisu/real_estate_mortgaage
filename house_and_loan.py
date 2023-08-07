@@ -42,21 +42,24 @@ def main():
     GarageCars = st.sidebar.slider('Garage cars-(Size of garage in car capacity)', 0, 30, 1)
     GarageArea = st.number_input('input the Size of garage in square feet e.g 40.05')
     st.write('garage area  is ', GarageArea)
-    ms = st.selectbox('Identifies the general zoning classification of the sale).',['RL', 'RM', 'C (all)', 'FV', 'RH'])
-    if (ms == 'FV'):
+    ms = st.selectbox('Identifies the general zoning classification of the sale).',['Residential Low Density', 'Residential Medium Density', 'Commercial', 'FLoating Village Residential', 'Residential Medium Density'])
+    if (ms == 'FLoating Village Residential'):
         MSZoning = 1
-    elif (ms == 'RH'):
+    elif (ms == 'Residential High Density'):
         MSZoning = 2
-    elif (ms == 'RL'):
+    elif (ms == 'Residential Low Density'):
         MSZoning = 3
-    elif (ms == 'RM'):
+    elif (ms == 'Residential Medium Density'):
         MSZoning = 4
     else:
         MSZoning = 0
-    st.write('RL = Residential Low Density RM = Residential Medium Density RH = Residential High Density FV = FLoating Village Residential c = Commercial')
     st.success(f'user selected {ms}')
-    Utilities = st.number_input('input the Utilities',min_value=0,step=1)
-    st.write('Utilities  is ', Utilities)
+    uti = st.selectbox('Type of utilities available',[All public Utilities , NoSewr	Electricity- Gas-Water-(Septic Tank)]) 
+    if (uti == 'All public Utilities'):
+        Utilities = 0
+    else:
+        Utilities = 1
+    st.write('Utilities selected is ', uti)
     BldgType = st.number_input('input the Building type',min_value=0,step=1)
     st.write('Building Type  is ', BldgType)
     KitchenQual = st.sidebar.slider('Kitchen Quality', 1, 6, 1)
