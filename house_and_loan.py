@@ -27,22 +27,35 @@ def main():
     # Add user input fields for house features
     st.header('House Price Prediction')
     OverallQual = st.sidebar.slider('Overall quality', 1, 10, 1)
+    st.write('OverallQual: Rates the overall material and finish of the house
+
+       10	Very Excellent
+       9	Excellent
+       8	Very Good
+       7	Good
+       6	Above Average
+       5	Average
+       4	Below Average
+       3	Fair
+       2	Poor
+       1	Very Poor')
+
     YearBuilt = st.number_input('Input the year built e.g "2008" ',min_value=0,step=1)
     st.write('Year of Built  is ', YearBuilt)
     YearRemodAdd = st.number_input('input the Remodel date- Same as year of construction if no remodeled date e.g "2008"',min_value=0,step=1)
     st.write('Year of RemoAdd ', YearRemodAdd)
-    TotalBsmtSF = st.number_input('input the Total Basement',min_value=0,step=1)
-    st.write('total Basement  is ', TotalBsmtSF)
-    firstFlrSF = st.number_input('input the first floor',min_value=0,step=1)
-    st.write('first floor  is ', firstFlrSF)
+    TotalBsmtSF = st.number_input('input the Total square feet of basement area e,g 25.27',min_value=0)
+    st.write('Total square feet of basement area', TotalBsmtSF)
+    firstFlrSF = st.number_input('input the first floor square feet',min_value=0)
+    st.write('first floor square feet is ', firstFlrSF)
     GrLivArea = st.number_input('input the Ground Living area')
     st.write('Ground living area  is ', GrLivArea)
-    FullBath = st.sidebar.slider('full bath', 0, 3, 1)
-    TotRmsAbvGrd = st.sidebar.slider('Room above ground', 1, 15, 1)
-    GarageCars = st.sidebar.slider('Garage cars', 0, 10, 1)
-    GarageArea = st.number_input('input the Garage Area')
+    FullBath = st.sidebar.slider('Full bathrooms above grade', 0, 3, 1)
+    TotRmsAbvGrd = st.sidebar.slider('Total rooms above grade (does not include bathrooms)', 1, 30, 1)
+    GarageCars = st.sidebar.slider('Garage cars', 0, 20, 1)
+    GarageArea = st.number_input('input the Size of garage in square feet e.g 40.05')
     st.write('garage area  is ', GarageArea)
-    MSZoning = st.number_input('input the  general zoning',min_value=0,step=1)
+    MSZoning = st.number_input('input the general zoning (Identifies the general zoning classification of the sale).',min_value=0,step=1)
     st.write('Mszoning is ', MSZoning)
     Utilities = st.number_input('input the Utilities',min_value=0,step=1)
     st.write('Utilities  is ', Utilities)
