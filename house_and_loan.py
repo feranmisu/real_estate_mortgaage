@@ -72,9 +72,32 @@ def main():
     else:
         BldgType = 1
     st.success(f'Type of dwelling is {build}')
-    KitchenQual = st.sidebar.slider('Kitchen Quality', 1, 6, 1)
-    SaleCondition =  st.sidebar.slider('Sale Condition', 1, 6, 1)
-
+    kq = st.selectbox('Kitchen Quality', ['Excellent','Good','Typical/Average','Fair', 'Poor'])
+    if (kq == 'Excellent'):
+       KitchenQual = 4
+    elif (kq == 'Good'):
+        KitchenQual = 3
+    elif (kq == 'Typical/Average'):
+        KitchenQual = 2
+    elif (kq == 'Fair'):
+        KitchenQual = 1
+    else:
+        KitchenQual = 0
+    st.success(f'Kitchen Quality is {kq}')
+    sc =  st.selectbox('Sale Condition', ['Normal', 'Abnormal', 'Partial-Home was not completed when last assessed', 'Adjoining Land Purchase', 'Allocation - two linked properties with separate deeds', 'Sale between Family'])
+     if (sc == 'Sale between Family'):
+       SaleCondition = 5
+    elif (sc == 'Normal'):
+        SaleCondition = 0
+    elif (sc == 'Abnormal'):
+        SaleCondition = 1
+    elif (sc == 'Partial-Home was not completed when last assessed'):
+       SaleCondition = 2
+    elif (sc == 'Adjoining Land Purchase'):
+       SaleCondition = 3
+    else:
+        SaleCondition = 4
+    st.success(f'Sale Condition is {sc}')
     # Predict house price
     house_data = pd.DataFrame({
         'overall_quality' : [OverallQual] ,
@@ -87,11 +110,11 @@ def main():
         'TotRmsAbvGrd': [TotRmsAbvGrd],
         'GarageCars': [GarageCars],
         'GarageArea': [GarageArea],
-        'MSZoning' : [GarageArea],
-        'Utilities' : [GarageArea],
-        'BldgType' : [GarageArea],
-        'KitchenQual' : [GarageArea],
-        'SaleCondition': [GarageArea]
+        'MSZoning' : [MSZoning],
+        'Utilities' : [Utilities],
+        'BldgType' : [BldgType],
+        'KitchenQual' : [KitchenQual],
+        'SaleCondition': [SaleCondition]
 
     })
     st.text('housing data information')
