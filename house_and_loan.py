@@ -27,18 +27,6 @@ def main():
     # Add user input fields for house features
     st.header('House Price Prediction')
     OverallQual = st.sidebar.slider('Overall quality', 1, 10, 1)
-    st.write('OverallQual: Rates the overall material and finish of the house
-
-       10	Very Excellent
-       9	Excellent
-       8	Very Good
-       7	Good
-       6	Above Average
-       5	Average
-       4	Below Average
-       3	Fair
-       2	Poor
-       1	Very Poor')
 
     YearBuilt = st.number_input('Input the year built e.g "2008" ',min_value=0,step=1)
     st.write('Year of Built  is ', YearBuilt)
