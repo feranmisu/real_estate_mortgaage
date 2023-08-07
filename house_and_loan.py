@@ -85,7 +85,7 @@ def main():
         KitchenQual = 0
     st.success(f'Kitchen Quality is {kq}')
     sc =  st.selectbox('Sale Condition', ['Normal', 'Abnormal', 'Partial-Home was not completed when last assessed', 'Adjoining Land Purchase', 'Allocation - two linked properties with separate deeds', 'Sale between Family'])
-     if (sc == 'Sale between Family'):
+    if (sc == 'Sale between Family'):
        SaleCondition = 5
     elif (sc == 'Normal'):
         SaleCondition = 0
